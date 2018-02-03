@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018/2/3 0:40
-# @Author  : CycloneBoy
-# @Site    : 
-# @File    : urls.py
-# @Software: PyCharm
-
-from django.urls import path
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    path(r'^$',views.index,name='index'),
+    # /music/
+    url(r'^$', views.index, name='index'),
+
+    # /music/71/
+    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
 ]
