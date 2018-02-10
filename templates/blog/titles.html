@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}博客标题{% endblock %}
+
+{% block css %}{% static 'css/index.css' %}{% endblock %}
+{% block js %}{% static 'js/index.js' %} {% endblock %}
+
+{% block content %}
+
+    <div class=" text-center vertical-middle-sm" style="margin-top: 50px">
+        <h1 >我的博客</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+
+
+            <ul>
+                {% for blog in blogs %}
+                    <li><a href="{{ blog.id }}">{{ blog.title }}</a></li>
+                {% endfor %}
+
+            </ul>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <h2>广告</h2>
+            <p>learn cycloneboy : www.cycloneboy.com</p>
+            <img width="200px" src="{% static 'images/litteprince.jpg' %}"/>
+        </div>
+    </div>
+
+
+{% endblock %}

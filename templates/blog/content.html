@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}blog article{% endblock %}
+
+{% block content %}
+
+    <div class=" text-center vertical-middle-sm" style="margin-top: 80px">
+        <h1>{{ article.title }}</h1>
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-xs-12 col-md-8">
+
+            <p class="text-center"><span>{{ article.author.username }}</span>
+                <span style="margin-left: 20px">{{ publish }}</span>
+            </p>
+            <div>
+                {{ article.body }}
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <h2>广告</h2>
+            <p>learn cycloneboy : www.cycloneboy.com</p>
+            <img width="200px" src="{% static 'images/litteprince.jpg' %}"/>
+
+        </div>
+    </div>
+{% endblock %}
