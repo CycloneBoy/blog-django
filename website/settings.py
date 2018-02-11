@@ -106,10 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 
 TIME_ZONE = 'Asia/Shanghai'
+
 
 USE_I18N = True
 
@@ -125,3 +126,30 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+LOGIN_REDIRECT_URL = '/blog/'
+
+
+# email
+
+EMAIL_HOST = 'stmp.qq.com'
+EMAIL_HOST_USER = '2368311551@qq.com'
+# rzbwgsxacmiheaic   fmtebnmbasjbdiji
+EMAIL_HOST_PASSWORD ='rzbwgsxacmiheaic'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = '2368311551@qq.com'
+
+
+
+
+
+
+
+
+
+
+
+
+
+

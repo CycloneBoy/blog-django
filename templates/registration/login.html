@@ -10,7 +10,7 @@
     <div class="text-center vertical-middle-sm" style="margin-top: 50px">
         <h1>登录</h1>
         <p>请输入登录名和密码</p>
-        <form class="form " action="." method="post">{% csrf_token %}
+        <form class="form " action="{% url 'account:user_login' %}" method="post">{% csrf_token %}
             <!--{{ form.as_p }}-->
 
             <div class="form-group">

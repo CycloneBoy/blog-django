@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% block css %}{% endblock %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
 </head>
 <body>
     {% include "header.html" %}
@@ -20,7 +22,7 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/popper.js' %}"></script>
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
 <script src="{% block js %}{% endblock %}"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 {% load staticfiles %}
 <div class="container">
+
+
+
+
     <!-- 顶部导航栏 -->
     <nav class="navbar  navbar-expand-md bg-dark navbar-dark fixed-top "
          role="navigation" id="menu-nav">
@@ -23,35 +27,12 @@
                         <a class="nav-link" href="{% url 'blog:blog_title' %}">博客</a>
                     </li>
 
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                           id="navbardrop"
-                           data-toggle="dropdown">
-                            特点<span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#feature-tab"
-                               data-tab="tab-chrome">Chrome</a>
-                            <a class="dropdown-item" href="#feature-tab"
-                               data-tab="tab-firefox">Firefox</a>
-                            <a class="dropdown-item" href="#feature-tab"
-                               data-tab="tab-safari">Safari</a>
-                            <a class="dropdown-item" href="#feature-tab"
-                               data-tab="tab-opera">Opera</a>
-                            <a class="dropdown-item" href="#feature-tab"
-                               data-tab="tab-ie">IE</a>
-                        </div>
-                    </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal"
-                           data-target="#about-modal" href="#">关于</a>
+                        <a class="nav-link" href="{% url 'blog:blog_title' %}">音乐</a>
                     </li>
-
                 </ul>
             </div>
-            {# 搜索栏 #}
+
             <form class="form-inline">
                 <input class="form-control" type="text" placeholder="搜索">
                 <button class="btn btn-success" type="submit">搜索</button>
@@ -59,9 +40,29 @@
 
             <div>
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+
+
+                        <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-right" href="#" id="navbardrop" data-toggle="dropdown">
+        {{ user.username }}<span class="fi-caret-right"></span>
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'account:password_change' %}">修改密码</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+
                     <li class="nav-item ">
-                        <a class="nav-link text-right" href="#">登录</a>
+                        <a class="nav-link text-right" href="{% url 'account:user_logout' %}">登出</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item ">
+                        <a class="nav-link text-right" href="{% url 'account:user_login' %}">登录</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
 
