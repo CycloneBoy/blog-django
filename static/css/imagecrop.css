@@ -1,18 +1,18 @@
 @charset "utf-8";
-/*.container {*/
-	/*width: 400px;*/
-	/*margin: 40px auto 0 auto;*/
-	/*position: relative;*/
-	/*font-family: 微软雅黑;*/
-	/*font-size: 12px;*/
-/*}*/
-/*.container p {*/
-	/*line-height: 12px;*/
-	/*line-height: 0px;*/
-	/*height: 0px;*/
-	/*margin: 10px;*/
-	/*color: #bbb*/
-/*}*/
+.container {
+	width: 400px;
+	margin: 0px auto 0 auto;
+	position: relative;
+	font-family: 微软雅黑;
+	font-size: 12px;
+}
+.container  p {
+	line-height: 12px;
+	line-height: 0px;
+	height: 0px;
+	margin: 10px;
+	color: #bbb
+}
 .action {
 	width: 400px;
 	height: 30px;

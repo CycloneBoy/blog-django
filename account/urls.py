@@ -51,11 +51,14 @@ urlpatterns = [
     url(r'^send-email/$', views.send_email_test, name='send_email_test'),
 
     # /my-information/
-    url(r'^my-information/$', views.myself, name='my-information'),
+    url(r'^my-information/$', views.myself, name='my_information'),
 
     # /edit-my-information/
-    url(r'^edit-my-information/$', views.myself_edit, name='edit-my-information'),
+    url(r'^edit-my-information/$', views.myself_edit, name='edit_my_information'),
 
     # /my-image/
     url(r'^my-image/$', views.my_image, name='my_image'),
+
+    # /my-image/
+    url(r'^my-image-test/$', views.my_image_test, name='my_image_test'),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'account',
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,7 @@ LOGIN_REDIRECT_URL = '/blog/'
 
 # email
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_HOST_USER = '2368311551@qq.com'
 # rzbwgsxacmiheaic   fmtebnmbasjbdiji
@@ -139,9 +141,7 @@ EMAIL_HOST_PASSWORD ='fmtebnmbasjbdiji'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST
-
-
-
+#EMAIL_SUBJECT_PREFIX = u'django'
 
 
 

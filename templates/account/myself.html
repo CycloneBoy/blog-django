@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-md-4 text-right"></div>
                     <div class="col-md-8 text-left">
-                        <a href="{% url 'account:edit-my-information' %}">
+                        <a href="{% url 'account:edit_my_information' %}">
                             <button class="btn btn-primary">编辑个人信息</button>
                         </a>
                     </div>
@@ -68,8 +68,13 @@
             </div>
             <div class="col-md-6">
                 <div style="margin-right: 100px">
+                    {% if userinfo.photo %}
+                     <img name="user_face" src="{{ userinfo.photo | striptags }}"
+                          class="rounded-circle" alt="user face" width="270px" id="my_photo">
+                    {% else %}
                      <img name="user_face" src="{% static 'images/litterprince-1.jpg' %}"
                           class="rounded-circle" alt="user face" width="270px" id="my_photo">
+                    {% endif %}
                 </div>
                 <div style="margin-right: 100px">
                      <button class="btn btn-info" alt="user face" width="270px" id="upload_image"
@@ -82,5 +87,18 @@
     </div>
 
 
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script>
+    function upload_image_layer() {
+        layer.open({
+            title: "上传图像",
+            area: ['650px', '600px'],
+            type: 2,
+            content:"{% url 'account:my_image' %}",
+        })
+    }
+
+</script>
 
 {% endblock %}
